@@ -4,17 +4,19 @@ import Quote from '../../components/quote/Quote';
 import getQuote from '../../services/simpsonsApi';
 
 const SimposonsQuote = () => {
-    const [quote, setQuote] = React.useState({ character: '' });
+    const [quote, setQuote] = React.useState({});
+    const [loading, setLoad] = React.useState(true);
 
     const handleClick = async () => {
         const quote = await getQuote();
         setQuote(quote);
+        setLoad(false);
     };
 
     return (
         <>
             <Load onClick={handleClick} />
-            {quote.character.length !== 0 && <Quote {...quote} />}
+            {!loading && <Quote {...quote} />}
         </>
     );
 };
