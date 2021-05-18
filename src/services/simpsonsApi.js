@@ -4,6 +4,8 @@ const getQuote = async (numberOfQuotes = 1) => {
     return json[0]; // returns single quote instead of array, change this before switching to multiple quotes
 }
 
+export default getQuote;
+
 // Simpsons API return shape
 //
 // [
