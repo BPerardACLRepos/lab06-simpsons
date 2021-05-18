@@ -1,10 +1,11 @@
-const fetchSimpson = async (numberOfQuotes = 1) => {
+const getQuote = async (numberOfQuotes = 1) => {
     const res = await fetch(`https://thesimpsonsquoteapi.glitch.me/quotes?count=${numberOfQuotes}`);
     const json = await res.json();
     return json[0]; // returns single quote instead of array, change this before switching to multiple quotes
 }
 
-
+// Simpsons API return shape
+//
 // [
 //     {
 //     "quote": "Oh Yeah!",
